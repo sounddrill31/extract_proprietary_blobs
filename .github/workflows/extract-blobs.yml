@@ -106,6 +106,7 @@ jobs:
         
     - name: Push to Github as Repository
       run: |
+        gh repo delete ${{ env.TR }} --yes || true
         cd workspace/android/vendor/${{ env.DVN }}/${{ env.DCN }}
         git init
         git branch -M ${{ env.DCN }}
